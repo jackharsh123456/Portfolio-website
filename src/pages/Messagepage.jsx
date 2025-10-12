@@ -13,6 +13,7 @@ function Messagepage() {
   } = useForm();
 
   const onSubmit = (data) => {
+    alert('your message was sent tot the admin');
     console.log(data);
   };
 
