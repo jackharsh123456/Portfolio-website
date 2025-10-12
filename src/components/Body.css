@@ -1,0 +1,32 @@
+.body {
+  padding-top:300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.body > h1 {
+  font-size: 60px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.body > p {
+  font-family: var(--font-text);
+  max-width: 32rem;
+  font-size: larger;
+  color: darkgray;
+  text-align: center;
+}
+
+#animate-para{
+  margin-left: 100px;
+}
+
+#paragraph{
+  text-align: center;
+}

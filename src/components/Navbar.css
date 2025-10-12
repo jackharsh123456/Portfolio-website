@@ -1,0 +1,31 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  margin-left: 30px;
+  font-size: x-large;
+  font-family: var(--font-title);
+  color: #fff;
+  margin-top: 2px;
+}
+
+.menubar > ul {
+  display: flex;
+  list-style: none;
+  margin-right: 50px;
+}
+
+.menubar > ul > a > li {
+  margin:10px 5px;
+}
+
+.menubar > ul > a > li > img{
+  transition: transform 0.2s;
+}
+
+.menubar > ul > a > li > img:hover{
+  transform: translateY(-4px);
+ 
+}

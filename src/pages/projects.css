@@ -1,0 +1,32 @@
+.projects-body {
+  padding-top: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-body > h1 {
+  font-size: 60px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.projects {
+  display: flex;
+  flex-direction: row;
+  max-width: 85vw;
+  margin-top: 50px;
+}
+
+.projectsbox{
+    margin:20px 10px;
+    padding: 70px;
+    background-color:rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 17.5px;
+}
+
