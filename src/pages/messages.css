@@ -36,17 +36,17 @@
   background-color: rgba(255, 255, 255, 0.05);
   padding: 15px 20px;
   border-style: none;
-  margin-bottom: 20px;
   border-radius: 4px;
+  margin-bottom: 20px;
 }
 
 .messagebox > form > textarea {
   background-color: rgba(255, 255, 255, 0.05);
   padding: 15px 25px;
   border-style: none;
-  margin-bottom: 20px;
   border-radius: 4px;
   resize: vertical;
+  margin-bottom: 20px;
 }
 
 .messagebox > form > input::placeholder {
@@ -91,5 +91,4 @@
 
 .errormsg{
   color: red;
-  margin-bottom: 20px;
 }
