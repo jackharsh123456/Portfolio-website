@@ -12,9 +12,12 @@ function Messagepage() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    let r = fetch("http://localhost:3000")
-    console.log(data);
+  const onSubmit = async (data) => {
+    let r = await fetch("http://localhost:3000/message", {method: "POST",  headers: {
+      "Content-Type": "application/json", 
+    }, body: JSON.stringify(data)})
+    let res = await r.text()
+    alert(res)
   };
 
   return (
