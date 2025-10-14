@@ -1,5 +1,4 @@
 .body {
-  padding-top:300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,4 +35,32 @@
 
 .links > img {
   width: 40px;
+}
+
+@media screen and (max-width: 640px) {
+  .links-body{
+    height: 100vh;
+  }
+  
+  .body > h1  {
+    font-size: 40px;
+    margin: bottom 5px;
+  }
+
+  .body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .links-container{
+    display: grid;
+    margin-top: 10px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    grid-template-columns: auto;
+    height: 100vh;
+  }
+
 }

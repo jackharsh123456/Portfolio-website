@@ -7,7 +7,7 @@ const Linkspage = () => {
   usePageTitle('Links - Harshyyy');
 
   return (
-    <div>
+    <div className='links-body'>
         <div className="body">
           <h1>Links</h1>
           <div className="links-container">

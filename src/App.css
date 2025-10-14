@@ -46,3 +46,13 @@
   --font-title: Titillium Web;
   --font-text: SUSE Mono;
 }
+
+@media screen and (max-width:640px) {
+  .app-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-attachment: fixed;
+  }
+}
