@@ -13,7 +13,7 @@ function Messagepage() {
   } = useForm();
 
   const onSubmit = (data) => {
-    alert('your message was sent tot the admin');
+    let r = fetch("http://localhost:3000")
     console.log(data);
   };
 
