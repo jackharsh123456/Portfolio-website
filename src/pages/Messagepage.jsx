@@ -13,11 +13,22 @@ function Messagepage() {
   } = useForm();
 
   const onSubmit = async (data) => {
-    let r = await fetch("http://localhost:3000/message", {method: "POST",  headers: {
-      "Content-Type": "application/json", 
-    }, body: JSON.stringify(data)})
-    let res = await r.text()
-    alert(res)
+    let r = await fetch("http://localhost:3000/message", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    if (r.ok) {
+      let res = await r.json();
+      console.log(res);
+      alert(res.message);
+    } else {
+      let errorres = await r.json();
+      console.error("Submission failed:", errorres);
+      alert(errorres);
+    }
   };
 
   return (
@@ -58,7 +69,9 @@ function Messagepage() {
             id="message"
             placeholder="Message"
           />
-          {errors.Message && <p className="errormsg">{errors.Message.message}</p>}
+          {errors.Message && (
+            <p className="errormsg">{errors.Message.message}</p>
+          )}
           <button name="message" className="submit-btn">
             submit
           </button>
