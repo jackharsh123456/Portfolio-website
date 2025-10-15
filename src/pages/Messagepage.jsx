@@ -1,20 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { X, CheckCircle, AlertTriangle } from 'lucide-react'; // Icons for notification
+import { X, CheckCircle, AlertTriangle } from 'lucide-react'; 
 
-// FIX: Replaced process.env usage with a hardcoded placeholder URL
-// IMPORTANT: You must replace 'https://your-backend-url.example/' with your actual deployed backend URL (e.g., https://backend-one-delta-19.vercel.app)
 const API_BASE_URL = 'https://backend-one-delta-19.vercel.app/'; 
-const MESSAGE_ENDPOINT = "message"; // Correct endpoint from your backend
+const MESSAGE_ENDPOINT = "message";
 
-// The usePageTitle hook (simulated for completeness)
 const usePageTitle = (title) => {
   useEffect(() => {
     document.title = title;
   }, [title]);
 };
 
-// Notification component to replace alert() - now using dedicated CSS classes
 const Notification = ({ message, type, onClose }) => {
   const notificationClass = `notification-container notification-${type}`;
   let Icon = AlertTriangle;
@@ -48,28 +44,26 @@ const Notification = ({ message, type, onClose }) => {
 function Messagepage() {
   usePageTitle("Contact - Harshyyy");
   
-  // State for user feedback (replacing alert)
-  const [notification, setNotification] = useState(null); // { message: string, type: 'success' | 'error' }
+  
+  const [notification, setNotification] = useState(null); 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const {
     register,
     handleSubmit,
-    reset, // Added reset for success
+    reset,
     formState: { errors },
   } = useForm();
 
   const showNotification = (message, type) => {
     setNotification({ message, type });
-    setTimeout(() => setNotification(null), 5000); // Auto-hide after 5 seconds
+    setTimeout(() => setNotification(null), 5000); 
   };
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
-    setNotification(null); // Clear previous notification
+    setNotification(null); 
     
-    // Correct URL and endpoint usage
-    // Ensure API_BASE_URL ends with a slash if MESSAGE_ENDPOINT does not start with one
     const url = `${API_BASE_URL}${MESSAGE_ENDPOINT}`;
     console.log(`Submitting message to: ${url}`);
 
