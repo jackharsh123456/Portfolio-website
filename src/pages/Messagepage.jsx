@@ -13,7 +13,7 @@ function Messagepage() {
   } = useForm();
 
   const onSubmit = async (data) => {
-    let r = await fetch("http://localhost:3000/message", {
+    let r = await fetch("https://backend-one-delta-19.vercel.app/e", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
