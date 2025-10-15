@@ -30,3 +30,30 @@
     font-size: 17.5px;
 }
 
+
+@media screen and (max-width: 640px) {
+  .projects-body {
+    padding-top: 0px;
+    margin-top: 100px;
+  }
+  
+  .projects-body > h1 {
+    font-size: 40px;
+  }
+  
+  .projects{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    max-width: 90vw;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    height: 70vh;
+  }  
+
+  .projectsbox{
+    margin: 10px 5px;
+    font-size: 14px;
+  }
+}
+
