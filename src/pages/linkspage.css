@@ -60,7 +60,7 @@
     overflow-y: scroll;
     scrollbar-width: none;
     grid-template-columns: auto;
-    height: 100vh;
+    height: 100%;
   }
 
 }
