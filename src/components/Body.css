@@ -23,10 +23,22 @@
   text-align: center;
 }
 
-#animate-para{
-  margin-left: 100px;
-}
+@media screen and (max-width: 640px) {
+  .body{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 100vh;
+    padding-top: 200px;
+  }
 
-#paragraph{
-  text-align: center;
+  .body > h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  .body > p {
+    max-width: 20rem;
+    font-size: 14px;
+  }
 }

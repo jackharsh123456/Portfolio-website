@@ -18,14 +18,47 @@
 }
 
 .menubar > ul > a > li {
-  margin:10px 5px;
+  margin: 10px 5px;
 }
 
-.menubar > ul > a > li > img{
+.menubar > ul > a > li > img {
   transition: transform 0.2s;
 }
 
-.menubar > ul > a > li > img:hover{
+.menubar > ul > a > li > img:hover {
   transform: translateY(-4px);
- 
+}
+
+@media screen and (max-width: 640px) {
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .logo {
+    font-size: 20px;
+    margin-right: 30px;
+  }
+
+  .menubar {
+    margin-left: 0px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: -5px 5px;
+  }
+
+  .menubar > ul {
+    margin-right: 0px;
+    padding: 0px 5px;
+  }
+
+  .menubar > ul > a > li > img {
+    transition: transform 0.2s;
+  }
+
+  .menubar > ul > a > li > img:active {
+    transform: translateY(-4px);
+  }
 }

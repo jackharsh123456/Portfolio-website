@@ -92,3 +92,39 @@
 .errormsg{
   color: red;
 }
+
+@media screen and (max-width: 640px) {
+ .messagebox{
+  height: 30vh;
+  min-height: 400px;
+  width: 60vw;
+  margin-top: 150px;
+  border-radius: 8px;
+ } 
+
+ .messagebox > h1 {
+  font-size: 40px;
+  margin-bottom: 40px;
+ }
+
+ .messagebox > form > input {
+  padding: 8px;
+  width: 190px;
+  height: 20px;
+  margin-bottom: 20px;
+ }
+
+ .messagebox > form > textarea {
+  padding: 8px;
+  width: 190px;
+  margin-bottom: 20px;
+ }
+
+ .messagebox > form > input, textarea::placeholder{
+  font-size: 8px;
+ }
+
+ .submit-btn{
+  margin-top: 40px;
+ }
+}
