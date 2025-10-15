@@ -16,7 +16,7 @@ const App = () => {
         <div className="bg-black">
         <Navbar/>
         <Routes>
-          <Route path='/' element={<Homepage/>}/>
+          <Route path='/homepage' element={<Homepage/>}/>
           <Route path='/links' element={<Linkspage/>}/>
           <Route path='/message' element={<Messagepage/>}/>
           <Route path='/projects' element={<Projectspage/>}/>
