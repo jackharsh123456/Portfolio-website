@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './components/Navbar'
 import "./App.css"
 import { Routes, Route } from 'react-router-dom'
-import Homepage from './pages/homepage'
+import Homepage from './pages/Homepage'
 import Linkspage from './pages/Linkspage'
 import Messagepage from './pages/Messagepage'
 import Projectspage from './pages/Projectspage'
@@ -16,7 +16,7 @@ const App = () => {
         <div className="bg-black">
         <Navbar/>
         <Routes>
-          <Route path='/homepage' element={<Homepage/>}/>
+          <Route path='/' element={<Homepage/>}/>
           <Route path='/links' element={<Linkspage/>}/>
           <Route path='/message' element={<Messagepage/>}/>
           <Route path='/projects' element={<Projectspage/>}/>
