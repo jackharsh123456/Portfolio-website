@@ -14,7 +14,7 @@ const Messagepage = () => {
 
   const onSubmit = async (data) => {
     try{
-    let r = await fetch(`${process.env.VITE_API_URL}/message`, {
+    let r = await fetch(`${import.meta.env.VITE_API_URL}/message`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -24,6 +24,7 @@ const Messagepage = () => {
       alert("Your message has been sent succesfully")
     };
   }catch (error) {
+    console.error(error)
     alert("Error sending Message")
   }
   };
@@ -38,7 +39,7 @@ const Messagepage = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
                 placeholder="Name"
-                {...register("names", {
+                {...register("name", {
                   required: { value: true, message: "This Field is required" },
                   maxLength: { value: 15, message: "Max length is 15" },
                 })}
