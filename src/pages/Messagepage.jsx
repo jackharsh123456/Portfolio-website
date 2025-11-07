@@ -31,6 +31,7 @@ const Messagepage = () => {
 
   return (
     <>
+    {isSubmitting && <div>Loading...</div>}
     <div className="main-div">
       <div className="main-body">
         <div className="message-contents">
