@@ -14,7 +14,7 @@ const Messagepage = () => {
 
   const onSubmit = async (data) => {
     try{
-    let r = await fetch(`${import.meta.env.VITE_API_URL}/message`, {
+    let r = await fetch(`${import.meta.env.VITE_API_URL}message`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
