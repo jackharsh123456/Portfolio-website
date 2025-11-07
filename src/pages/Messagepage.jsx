@@ -1,97 +1,77 @@
+import React from "react";
+import "./messages.css";
 import { useForm } from "react-hook-form";
-import usePageTitle from "../Usepagetitle";
-import "./messages.css"
+import { usePageTitle } from '../Usepagetitle'
 
-function Messagepage() {
-  usePageTitle("Contact - Harshyyy");
-
+const Messagepage = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
-    reset,
+    formState: { errors },
   } = useForm();
 
+  usePageTitle("Contact - Harshyyy");
+
   const onSubmit = async (data) => {
-    try {
-      const response = await fetch("http://localhost:3000/message", {
+    try{
+    let r = await fetch(`${process.env.VITE_API_URL}/message`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
-        alert(result.message); // ✅ Success alert
-        reset();
-      } else {
-        alert(result.message || "Something went wrong."); // ⚠️ Error alert
-      }
-    } catch (error) {
-      console.error("Error sending message:", error);
-      alert("Network error. Please try again later.");
-    }
+    })
+    const formdata = await r.json();
+    if (r.ok) {
+      alert("Your message has been sent succesfully")
+    };
+  }catch (error) {
+    alert("Error sending Message")
+  }
   };
 
   return (
-    <div className="main-container">
-      <div className="message-box">
-        <h1 className="contact-title">Contact</h1>
-
-        <form onSubmit={handleSubmit(onSubmit)}>
-          {/* Name Field */}
-          <div>
-            <input
-              {...register("Name", {
-                required: "Name is required.",
-                maxLength: { value: 20, message: "Maximum length is 20 characters." },
-              })}
-              type="text"
-              placeholder="Name"
-              className="form-input"
-            />
-            {errors.Name && <p className="error-msg">{errors.Name.message}</p>}
+    <>
+    <div className="main-div">
+      <div className="main-body">
+        <div className="message-contents">
+          <h1>Contact</h1>
+          <div className="int-form">
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <input
+                placeholder="Name"
+                {...register("names", {
+                  required: { value: true, message: "This Field is required" },
+                  maxLength: { value: 15, message: "Max length is 15" },
+                })}
+                type="text"
+              />
+              {errors.name && <p className="error">{errors.name.message}</p>}
+              <input
+                type="email"
+                placeholder="Email"
+                {...register("email", {
+                  required: { value: true, message: "This Field is required" },
+                })}
+              />
+              {errors.email && <p className="error">{errors.email.message}</p>}
+              <textarea
+                type="text"
+                placeholder="Message"
+                {...register("message", {
+                  required: { value: true, message: "This Field is required" },
+                  minLength: { value: 10, message: "Min length is 10" },
+                })}
+              />
+              {errors.messages && (
+                <p className="error">{errors.messages.message}</p>
+              )}
+              <button type="submit">Submit</button>
+            </form>
           </div>
-
-          {/* Email Field */}
-          <div>
-            <input
-              {...register("Email", {
-                required: "Email is required.",
-                pattern: {
-                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                  message: "Invalid email address.",
-                },
-              })}
-              type="email"
-              placeholder="Email"
-              className="form-input"
-            />
-            {errors.Email && <p className="error-msg">{errors.Email.message}</p>}
-          </div>
-
-          {/* Message Field */}
-          <div>
-            <textarea
-              {...register("Message", {
-                required: "Message is required.",
-              })}
-              placeholder="Message"
-              rows="5"
-              className="form-input form-textarea"
-            />
-            {errors.Message && <p className="error-msg">{errors.Message.message}</p>}
-          </div>
-
-          {/* Submit Button */}
-          <button type="submit" disabled={isSubmitting} className="submit-btn">
-            {isSubmitting ? "Sending..." : "Send Message"}
-          </button>
-        </form>
+        </div>
       </div>
     </div>
+    </>
   );
-}
+};
 
 export default Messagepage;

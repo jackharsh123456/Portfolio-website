@@ -1,32 +1,22 @@
-.main-container {
+.main-div {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 90vh;
 }
 
-/* Message box container */
-.message-box {
+.main-body {
   background-color: rgba(255, 255, 255, 0.05);
-  height: 50vh;
-  min-height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 20%;
-  margin-top: 200px;
-  border-radius: 8px;
+  border-radius: 10px;
+  padding: 60px;
 }
 
-/* Form styles */
-.message-box > form {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+.message-contents {
+  width: 100%;
+  text-align: center;
 }
 
-/* Title */
-.message-box > h1 {
+.message-contents > h1 {
   font-size: 60px;
   color: #fff;
   display: flex;
@@ -35,101 +25,87 @@
   margin-bottom: 20px;
 }
 
-/* Input fields */
-.message-box > form > input {
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 15px 20px;
-  border: none;
-  border-radius: 4px;
-  margin-bottom: 20px;
-  color: #fff;
-  font-family: var(--font-text);
+.int-form > form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
-.message-box > form > textarea {
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 15px 25px;
-  border: none;
-  border-radius: 4px;
-  resize: vertical;
-  margin-bottom: 20px;
-  color: #fff;
-  font-family: var(--font-text);
-}
-
-/* Placeholder styling */
-.message-box > form > input::placeholder,
-.message-box > form > textarea::placeholder {
-  color: darkgray;
-  font-family: var(--font-text);
-  font-size: 15px;
-}
-
-/* Submit button */
-.submit-btn {
-  margin-top: 10px;
-  padding: 9px 35px;
-  font-size: 15px;
-  font-family: var(--font-text);
-  color: #fff;
-  border-radius: 18px;
-  border: none;
-  transition: transform 0.2s ease-out, background 0.2s ease-out;
-  background: linear-gradient(
-    45deg,
-    rgba(65, 89, 208, 1) 0%,
-    rgba(200, 79, 192, 1) 50%,
-    rgba(255, 205, 112, 1) 100%
-  );
-}
-
-.submit-btn:active {
-  transform: scale(0.95);
-  background: rgba(255, 255, 255, 0.05);
-}
-
-/* Error message text */
-.error-msg {
+.error {
   color: red;
-  font-size: 14px;
-  margin-top: -10px;
-  margin-bottom: 10px;
+  font-size: small;
 }
 
-/* Responsive adjustments */
-@media screen and (max-width: 640px) {
-  .message-box {
-    height: 30vh;
-    min-height: 400px;
-    width: 60vw;
-    margin-top: 150px;
-    border-radius: 8px;
+.int-form > form > input {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  border: none;
+  padding: 10px 5px;
+  color: #ffffff;
+  margin-top: 8px;
+}
+
+.int-form > form > textarea {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  border: none;
+  padding: 10px 8px;
+  color: #ffffff;
+  margin-top: 8px;
+}
+
+.int-form > form > input::placeholder {
+  color: blueviolet;
+}
+
+.int-form > form > textarea::placeholder {
+  color: blueviolet;
+}
+
+.int-form > form > button {
+  padding: 15px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  color: blueviolet;
+  border: none;
+  margin-top: 20px;
+}
+
+@media (max-width: 640px) {
+  .main-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
   }
 
-  .message-box > h1 {
+  .main-body {
+    margin: 0px 70px;
+    padding: 50px
+  }
+
+  .message-contents > h1 {
     font-size: 40px;
-    margin-bottom: 40px;
   }
 
-  .message-box > form > input {
+  .int-form > form > input{
     padding: 8px;
-    width: 190px;
-    height: 20px;
-    margin-bottom: 20px;
+    width: 100%;
   }
 
-  .message-box > form > textarea {
+  .int-form > form > textarea{
     padding: 8px;
-    width: 190px;
-    margin-bottom: 20px;
+    width: 100%;
   }
 
-  .message-box > form > input::placeholder,
-  .message-box > form > textarea::placeholder {
+  .int-form > form > button {
+    margin-top: 20px;
+  }
+
+  .int-form > form > input::placeholder,
+  .int-form > form > textarea::placeholder {
     font-size: 12px;
-  }
-
-  .submit-btn {
-    margin-top: 40px;
   }
 }
